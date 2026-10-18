@@ -1,4 +1,6 @@
-"""Run the USPTO Patent Scraper on Apify and save its results as JSON and CSV.
+"""Run an Apify Actor and save its results as JSON and CSV.
+
+Actor: USPTO Patent Scraper
 
 Actor page: https://apify.com/DevilScrapes/uspto-patents-scraper
 """
@@ -15,11 +17,12 @@ from pathlib import Path
 from apify_client import ApifyClient
 
 ACTOR_ID = "DevilScrapes/uspto-patents-scraper"
+ACTOR_TITLE = "USPTO Patent Scraper"
 TERMINAL_OK = "SUCCEEDED"
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the USPTO Patent Scraper on Apify.")
+    parser = argparse.ArgumentParser(description=f"Run the {ACTOR_TITLE} on Apify.")
     parser.add_argument("input", nargs="?", default="input.json", help="Actor input JSON file (default: input.json)")
     parser.add_argument("--out", default=".", help="Folder for results.json and results.csv (default: here)")
     parser.add_argument("--max-charge", type=Decimal, help="Stop the run once it has cost this many USD")
