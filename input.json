@@ -1,0 +1,8 @@
+{
+  "searchQuery": "TI/(solid state battery)",
+  "maxResults": 10,
+  "sortBy": "publication_date_desc",
+  "proxyConfiguration": {
+    "useApifyProxy": false
+  }
+}
